@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
 import "./globals.css";
 
 
@@ -16,12 +23,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${font.className} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ClerkProvider afterSignOutUrl="/">
+      <html lang="en">
+        <body className={`${font.className} antialiased`}>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
+
   );
 }
