@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Link, Loader } from "lucide-react";
+import { Loader } from "lucide-react";
 import {
   ClerkLoaded,
   ClerkLoading,
@@ -9,6 +9,7 @@ import {
   SignUpButton,
 } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
